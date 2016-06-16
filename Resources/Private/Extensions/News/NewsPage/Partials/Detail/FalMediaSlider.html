@@ -1,0 +1,19 @@
+<f:if condition="{media}">
+	<!-- fal media files -->
+	<f:for each="{media}" as="mediaElement">
+		<f:if condition="{mediaElement.originalResource.type} == 2">
+			<div class="item">
+				<f:image image="{mediaElement}" title="{mediaElement.title}"
+					alt="{mediaElement.alternative}" width="880" height="300c-100"
+					class="img-responsive" />
+			</div>
+		</f:if>
+		<f:if condition="{mediaElement.originalResource.type} == 5">
+			<div class="item">
+				<f:image image="{mediaElement}" title="{mediaElement.title}"
+					alt="{mediaElement.alternative}" width="880" height="300"
+					class="img-responsive" />
+			</div>
+		</f:if>
+	</f:for>
+</f:if>

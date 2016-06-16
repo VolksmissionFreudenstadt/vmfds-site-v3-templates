@@ -1,0 +1,33 @@
+{namespace v3=VMFDS\V3\ViewHelpers}
+<div id="sermons-slider" class="owl-carousel">
+	<f:for each="{sermons}" as="sermon">
+		<div class="item">
+			<div class="col-md-8">
+				<f:image width="270c" height="295" class="img-responsive"
+					src="/predigten/Titelbilder/{sermon.image}" alt="" />
+			</div>
+			<div class="col-md-8">
+				<h4>Predigten</h4>
+				<div class="music-info">
+					<h5>{sermon.title}</h5>
+					<p>
+						<f:for each="{sermon.preacher}" as="preacher">
+                        {preacher.name}
+                    </f:for>
+						/ {sermon.preached -> f:format.date(format: 'd.m.Y')} / <a
+							href="#">{series.title}</a>
+					</p>
+				</div>
+				<ul class="m-ico">
+					<li><a href="#" class="m-ico1"></a></li>
+					<li><a href="#" class="m-ico2"></a></li>
+					<li><a href="#" class="m-ico3"></a></li>
+				</ul>
+				<div class="line"></div>
+				<f:link.page pageUid="4" class="hb-more">Predigtarchiv</f:link.page>
+				<v3:social.share
+					url="{f:uri.action(action: show, pageUid: settings.singlePid, arguments:'{sermon:sermon}')}" />
+			</div>
+		</div>
+	</f:for>
+</div>

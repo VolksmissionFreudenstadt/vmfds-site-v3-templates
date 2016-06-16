@@ -1,0 +1,29 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form id="homeSlider" options="{group: 'Portal'}">
+                    <flux:form.content name="sliderContent" />
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		<!-- If you wish, place custom backend preview content here -->
+                Der Slider für das Portal
+	</f:section>
+
+	<f:section name="Main">
+        <!-- Slider -->
+        <div class="slider-wrapper theme-default">
+            <div id="owl-homeslider" class="owl-carousel">
+                <!-- Sliderinhalte -->
+                <flux:content.render area="sliderContent" />
+            </div>
+        </div>
+        <!-- Slider -->
+	</f:section>
+</div>

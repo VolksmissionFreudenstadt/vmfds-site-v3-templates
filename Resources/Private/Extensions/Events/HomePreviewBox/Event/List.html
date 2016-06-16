@@ -1,0 +1,29 @@
+{namespace v3=VMFDS\V3\ViewHelpers}
+<ul>
+	<f:for each="{events}" as="event">
+		<li>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="date">
+						{event.startdatum -> f:format.date(format: '%d')}<span>{event.startdatum
+							-> f:format.date(format: '%b')}</span>
+					</div>
+					<h4>
+						{event.name} <span>{event.title}</span>
+					</h4>
+					<div class="time">{event.startzeit -> f:format.date(format:
+						'%H:%M')} Uhr - {f:if(condition:
+						'{event.my_vmfds_events_location}', then:
+						'{event.my_vmfds_events_location}', else: 'Volksmission
+						Freudenstadt')}</div>
+				</div>
+				<div class="col-md-4">
+					<v3:social.share
+						url="{f:uri.action(action: show, pageUid: settings.singlePid, arguments:'{event: event.id}')}" />
+				</div>
+			</div>
+		</li>
+	</f:for>
+</ul>
+<div class="line"></div>
+<a href="#" class="hb-more">Alle Veranstaltungen</a>

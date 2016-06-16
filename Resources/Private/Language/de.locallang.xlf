@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" target-language="en" datatype="plaintext" original="messages" product-name="v3" date="2016-01-28T12:28:58+01:00">
+		<header/>
+		<body>
+			<trans-unit id="flux.standard">
+				<target>Gemeinde (Standard)</target>
+			</trans-unit>
+			<trans-unit id="flux.standard.description">
+				<target>Standardseite, Volksmission Freudenstadt</target>
+			</trans-unit>
+			<trans-unit id="flux.portal">
+				<target>Gemeinde (Portalseite)</target>
+			</trans-unit>
+			<trans-unit id="flux.portal.description">
+				<target>Portalseite, Volksmission Freudenstadt</target>
+			</trans-unit>
+			<trans-unit id="flux.catheader">
+				<target>Gemeinde (2. Ebene)</target>
+			</trans-unit>
+			<trans-unit id="flux.catheader.description">
+				<target>Einstiegsseite der 2. Ebene, Volksmission Freudenstadt</target>
+			</trans-unit>
+			<trans-unit id="flux.homeSlider">
+				<target>Großer Slider</target>
+			</trans-unit>
+			<trans-unit id="flux.homeSlider.description">
+				<target>Wechselnde Bilder für eine Portalseite</target>
+			</trans-unit>
+			<trans-unit id="flux.actionButton">
+				<target>Button</target>
+			</trans-unit>
+			<trans-unit id="flux.actionButton.description">
+				<target>Link in Buttonform</target>
+			</trans-unit>
+			<trans-unit id="flux.actionButton.fields.title">
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="flux.actionButton.fields.link">
+				<target>Link zur Seite</target>
+			</trans-unit>
+			<trans-unit id="flux.actionButton.fields.class">
+				<target>CSS Klasse</target>
+			</trans-unit>
+			<trans-unit id="flux.example">
+				<target>Example element</target>
+			</trans-unit>
+			<trans-unit id="flux.example.description">
+				<target>Small example element</target>
+			</trans-unit>
+			<trans-unit id="flux.example.fields.settings.helloWorld">
+				<target>Example input</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

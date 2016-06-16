@@ -1,0 +1,19 @@
+<f:for each="{events}" as="event">
+	<f:if condition="{event.my_vmfds_events_teaser_image}">
+	
+		<div class="item">
+		<f:image src="fileadmin/{event.my_vmfds_events_teaser_image}" width="1920" height="827" class="img-responsive" title="{event.title}" />
+			<div class="nivo-caption">
+				<p>
+				{event.startdatum -> f:format.date(format: '%d.%m.%Y')}
+				<f:if condition="{event.startzeit}">, {event.startzeit -> f:format.date(format: '%H:%M')} Uhr</f:if>
+				</p>
+				<h2>
+					{event.title}
+				</h2>
+				<f:if condition="{event.my_vmfds_events_teaser_text}"><p>{event.my_vmfds_events_teaser_text}</p></f:if>
+			</div>
+		</div>
+	</f:if>
+</f:for>
+

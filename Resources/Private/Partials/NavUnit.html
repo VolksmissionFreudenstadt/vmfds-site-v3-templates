@@ -1,0 +1,58 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+
+    <ul class="{ulClass}">
+        <v:page.menu.list pages="{pages}">            
+            <f:for each="{menu}" as="item">
+                <f:if condition="{item.hasSubPages}">
+                    <f:then>
+                        <f:if condition="{v:content.get(column: 1, pageUid: '{item.uid}')}">
+                            <f:then>
+                                <li class="has-sub-mega">
+                                    <f:link.page pageUid="{item.uid}" title="{item.linktext}">{item.linktext}</f:link.page>
+                                    <div class="mega-menu">
+                                        <div class="col-md-9 m1">
+                                            <v:content.render column="1" pageUid="{item.uid}"></v:content.render>
+                                        </div>
+                                        <div class="col-md-4 m2">
+                                            <v:page.menu.directory pages="{item.uid}">
+                                                <f:for each="{menu}" as="item2">
+                                                    <h5><f:link.page pageUid="{item2.uid}" title="{item2.linktext}">{item2.linktext}</f:link.page></h5>
+                                                    <v:page.menu.directory pages="{item2.uid}">
+                                                        <f:for each="{menu}" as="item3">
+                                                            <f:link.page pageUid="{item3.uid}" title="{item3.linktext}">{item3.linktext}</f:link.page>
+                                                        </f:for>
+                                                    </v:page.menu.directory>
+                                                </f:for>
+                                            </v:page.menu.directory>
+                                        </div>
+                                        <div class="col-md-3 m3">
+                                            <v:content.render column="2" pageUid="{item.uid}"></v:content.render>                                    
+                                        </div>
+
+                                </li>
+                            </f:then>
+                            <f:else>
+                                <li class="has-sub">
+                                    <f:link.page pageUid="{item.uid}" title="{item.linktext}">{item.linktext}</f:link.page>
+                                    <div class="subpage">
+                                        <v:page.menu.directory pages="{item.uid}">
+                                            <f:for each="{menu}" as="item2">
+                                                <f:link.page pageUid="{item2.uid}" title="{item2.linktext}">{item2.linktext}</f:link.page>
+                                            </f:for>
+                                        </v:page.menu.directory>
+                                    </div>
+                                </li>
+                            </f:else>
+                        </f:if>
+                    </f:then>
+                    <f:else>
+                        <li><f:link.page pageUid="{item.uid}" title="{item.linktext}">{item.linktext}</f:link.page></li>
+                    </f:else>
+                </f:if>
+            </f:for>
+        </v:page.menu.list>
+    </ul>
+</div>

@@ -1,0 +1,66 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="de"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:v3="http://typo3.org/ns/VMFDS/V3/ViewHelpers">
+
+	<f:layout name="Page" />
+
+	<f:section name="Configuration" >
+		<flux:form id="standard" options="{icon: '{f:uri.resource(path: \'Icons/Page/Standard.png\')}'}">                   
+			<flux:field.input name="settings.pageClass" default="pages" />
+			<flux:field.checkbox name="settings.render.breadcrumb" default="1" />
+		</flux:form>
+		<flux:grid>
+			<!-- Edit this grid to change the "backend layout" structure -->
+			<flux:grid.row>
+				<flux:grid.column colPos="3" colspan="4" name="hero" />
+			</flux:grid.row>
+			<flux:grid.row>
+				<flux:grid.column colPos="0" colspan="4" name="main" />
+			</flux:grid.row>
+		</flux:grid>
+	</f:section>
+
+	<f:section name="Hero">
+		<!-- Page Header -->
+		<div class="page-header container">
+		<f:if condition="{settings.render.breadcrumb}">
+			<div class="col-md-16">			
+				<ol class="breadcrumb">
+					<li><a href="/"><img
+							src="typo3conf/ext/v3/Resources/Public/images/home.png" alt="" /></a></li>
+					<v:page.breadCrumb tagName="" class="breadcrumb" classActive=""
+						classCurrent="active" classHasSubpages="" excludePages="2"
+						entryLevel="1" />
+				</ol>
+				<h3>{page.title}</h3>
+			</div>
+			</f:if>
+		</div>
+		<div class="col-md-16">
+				<v:content.render column="3" />		
+		</div>
+		
+		<!-- Page Header -->
+		<div class="slider-wrapper theme-default" style="max-height: 250px;">
+			<div id="owl-homeslider" class="owl-carousel">
+				<f:cObject typoscriptObjectPath="lib.slider" />
+			</div>
+		</div>
+
+	</f:section>
+
+	<f:section name="Main">
+		<!-- Inhaltselemente der Seite -->
+		<div class="white-bg">
+			<!-- Main content -->
+			<div class="main-wrap">
+				<div class="container">
+					<v:content.render column="0" />
+				</div>
+			</div>
+		</div>
+	</f:section>
+
+</div>

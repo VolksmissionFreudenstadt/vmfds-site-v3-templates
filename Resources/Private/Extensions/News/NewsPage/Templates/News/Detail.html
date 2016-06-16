@@ -1,0 +1,202 @@
+{namespace n=GeorgRinger\News\ViewHelpers}
+{namespace v3=VMFDS\V3\ViewHelpers}
+
+<f:layout name="Detail.html" />
+
+<!--
+	=====================
+		News/Detail.html
+-->
+
+<f:section name="content">
+	<div class="col-md-12">
+		<f:if condition="{newsItem}">
+			<f:then>
+				<article>
+					<f:render partial="Detail/FalMediaSlider"
+						arguments="{media: newsItem.falMedia, settings:settings}" />
+					<n:format.nothing>
+						<f:render partial="Detail/Opengraph"
+							arguments="{newsItem: newsItem, settings:settings}" />
+					</n:format.nothing>
+
+					<div class="row">
+						<div class="col-md-11">
+							<span class="post-meta">{newsItem.datetime ->
+								f:format.date(format: '%d. %b %Y')} <f:if
+									condition="{newsItem.tags}">
+								/ Tags: 
+								<f:for each="{newsItem.tags}" as="tag">
+										<f:link.page pageUid="{settings.listPid}"
+											additionalParams="{tx_news_pi1:{overwriteDemand:{tags: tag}}}">{tag.title} </f:link.page>
+									</f:for>
+								</f:if>
+							</span>
+							<h4>
+								<f:if condition="{newsItem.alternativeTitle}">
+									<f:then>
+										<n:format.htmlentitiesDecode>{newsItem.alternativeTitle}</n:format.htmlentitiesDecode>
+									</f:then>
+									<f:else>
+										<n:format.htmlentitiesDecode>{newsItem.title}</n:format.htmlentitiesDecode>
+									</f:else>
+								</f:if>
+							</h4>
+						</div>
+						<div class="col-md-5">
+							<div class="space20"></div>
+							<v3:social.share url="{n:link(newsItem:newsItem, settings:settings, uriOnly:1, configuration:'{forceAbsoluteUrl:1}')}" />
+						</div>
+					</div>
+					<div class="space20"></div>
+					<div class="excerpt" itemprop="description">
+						<f:if condition="{newsItem.teaser}">
+							<!-- teaser -->
+							<p class="strong teaser-text">
+								<f:format.html>{newsItem.teaser}</f:format.html>
+							</p>
+						</f:if>
+						<f:if condition="{newsItem.contentElements}">
+							<!-- content elements -->
+							<f:cObject
+								typoscriptObjectPath="lib.tx_news.contentElementRendering">{newsItem.contentElementIdList}</f:cObject>
+						</f:if>
+					</div>
+
+
+					<f:render partial="Detail/MediaContainer"
+						arguments="{media: newsItem.media, settings:settings}" />
+
+					<!-- main text -->
+					<div class="news-text-wrap" itemprop="articleBody">
+						<f:format.html>{newsItem.bodytext}</f:format.html>
+					</div>
+
+					<!-- related things -->
+					<div class="news-related-wrap">
+
+						<f:if condition="{newsItem.allRelatedSorted}">
+							<!-- Related news records -->
+							<div class="news-related news-related-news">
+								<h4>
+									<f:translate key="related-news" />
+								</h4>
+								<ul>
+									<f:for each="{newsItem.allRelatedSorted}" as="related">
+										<li><span class="news-related-news-date"><f:format.date
+													format="{f:translate(key:'dateFormat')}">{related.datetime}</f:format.date></span>
+											<n:link newsItem="{related}" settings="{settings}"
+												title="{related.title}">
+										{related.title}
+									</n:link></li>
+
+									</f:for>
+								</ul>
+							</div>
+						</f:if>
+
+						<f:if condition="{newsItem.relatedFiles}">
+							<!-- Related files -->
+							<div class="news-related news-related-files">
+								<h4>
+									<f:translate key="related-files" />
+								</h4>
+								<ul>
+									<f:for each="{newsItem.relatedFiles}" as="relatedFile">
+										<li><span class="news-related-files-link"> <n:format.fileDownload
+													file="uploads/tx_news/{relatedFile.file}"
+													configuration="{settings.relatedFiles.download}">
+													<f:if condition="{relatedFile.title}">
+														<f:then>
+													{relatedFile.title}
+												</f:then>
+														<f:else>
+													{relatedFile.file}
+												</f:else>
+													</f:if>
+												</n:format.fileDownload>
+										</span> <span class="news-related-files-size"> <n:format.fileSize
+													file="uploads/tx_news/{relatedFile.file}"
+													format="{settings.relatedFiles.fileSizeLabels}" />
+										</span></li>
+									</f:for>
+								</ul>
+							</div>
+						</f:if>
+
+						<f:if condition="{newsItem.falRelatedFiles}">
+							<!-- FAL related files -->
+							<div class="news-related news-related-files">
+								<h4>
+									<f:translate key="related-files" />
+								</h4>
+								<ul>
+									<f:for each="{newsItem.falRelatedFiles}" as="relatedFile">
+										<li><span class="news-related-files-link"> <n:format.fileDownload
+													file="{relatedFile.originalResource.publicUrl}"
+													configuration="{settings.relatedFiles.download}">
+													<f:if condition="{relatedFile.originalResource.title}">
+														<f:comment>
+															<!-- Todo: Remove format.raw() if using title/name outside cObject context-->
+														</f:comment>
+														<f:then>
+													{relatedFile.originalResource.title -> f:format.raw()}
+												</f:then>
+														<f:else>
+													{relatedFile.originalResource.name -> f:format.raw()}
+												</f:else>
+													</f:if>
+												</n:format.fileDownload>
+										</span> <span class="news-related-files-size">
+												{relatedFile.originalResource.size -> f:format.bytes()} </span></li>
+									</f:for>
+								</ul>
+							</div>
+						</f:if>
+
+						<f:if condition="{newsItem.relatedLinks}">
+							<!-- Related links -->
+							<div class="news-related news-related-links">
+								<h4>
+									<f:translate key="related-links" />
+								</h4>
+								<ul>
+									<f:for each="{newsItem.relatedLinks}" as="relatedLink">
+										<li><f:link.page pageUid="{relatedLink.uri}"
+												title="{relatedLink.title}"
+												target="{n:targetLink(link:relatedLink.uri)}">{f:if(condition: relatedLink.title, then: relatedLink.title, else: relatedLink.uri)}</f:link.page>
+											<f:if condition="{relatedLink.description}">
+												<span>{relatedLink.description}</span>
+											</f:if></li>
+									</f:for>
+								</ul>
+							</div>
+						</f:if>
+					</div>
+				</article>
+			</f:then>
+			<f:else>
+
+			</f:else>
+		</f:if>
+	</div>
+	<aside class="col-md-4">
+		<f:if condition="{settings.backPid}">
+			<div class="side-widget">
+				<h5>Weitere Nachrichten</h5>
+				<!-- Link Back -->
+				Weitere Nachrichten aus der Volksmission Freudenstadt findest du in
+				unserer
+				<f:link.page pageUid="{settings.backPid}">
+								&Uuml;bersicht
+							</f:link.page>
+				.
+			</div>
+			<div class="space40"></div>
+		</f:if>
+		<div class="side-widget">
+			<h5>Kategorien</h5>
+			<f:cObject typoscriptObjectPath="lib.news.tagMenu" />
+		</div>
+	</aside>
+</f:section>

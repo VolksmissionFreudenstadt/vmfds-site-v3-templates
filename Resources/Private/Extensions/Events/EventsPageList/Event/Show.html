@@ -1,0 +1,62 @@
+{namespace v3=VMFDS\V3\ViewHelpers}
+<div class="col-md-12">
+	<div class="events-wrap events-wrap-big">
+		<div class="row">
+			<div class="col-md-16">
+				<f:image src="fileadmin/{event.my_vmfds_events_picture}"
+					class="img-responsive" alt="" width="850" height="290c" />
+				<div class="row">
+					<div class="col-md-11">
+						<div class="space20"></div>
+						<h4>
+							{event.name} <span>{event.title}</span>
+						</h4>
+					</div>
+					<div class="col-md-5">
+						<v3:social.share
+							url="{f:uri.action(action: show, pageUid: settings.singlePid, arguments:'{event: event.id}')}" />
+					</div>
+				</div>
+				<ul class="events-meta">
+					<li><b>{event.my_vmfds_events_location}</b><br>{event.my_vmfds_events_nav_address}</li>
+					<li><b>Datum:</b> {event.startdatum -> f:format.date(format:
+						'%d. %B %Y')} <br> <b>Zeit:</b> {event.startzeit ->
+						f:format.date(format: '%H:%M')}<f:if
+							condition="{event.endzeit -> f:format.date(format: '%H%M')} > 0"> - {event.endzeit -> f:format.date(format: '%H:%M')}</f:if>
+						Uhr</li>
+				</ul>
+				<div class="space30"></div>
+				<p class="strong">
+					<b>{event.my_vmfds_events_teaser_text}</b>
+				</p>
+				<p>{event.my_vmfds_events_longdescription -> f:format.html()}</p>
+			</div>
+		</div>
+	</div>
+</div>
+<aside class="col-md-4">
+	<div class="side-widget about">
+		<h5>Fragen?</h5>
+		<p>Du hast Fragen zu "{event.title}"?</p>
+		<p>
+			Gerne darfst du dich &uuml;ber unser
+			<f:link.page pageUid="10">Kontaktformular</f:link.page>
+			an mich wenden.
+	</div>
+	<div class="space80"></div>
+	<div class="side-widget about">
+		<h5>Wo findet die Veranstaltung statt?</h5>
+		<a
+			href="http://maps.google.de/maps?q={event.my_vmfds_events_location}, {event.my_vmfds_events_nav_address}"
+			target="_blank"
+			title="{event.my_vmfds_events_location}, {event.my_vmfds_events_nav_address}">
+			<img
+			src="http://maps.googleapis.com/maps/api/staticmap?center={event.my_vmfds_events_location}, {event.my_vmfds_events_nav_address}&markers={event.my_vmfds_events_location},{event.my_vmfds_events_nav_address}&zoom=14&sensor=false&visual_refresh=true&size=241x252"
+			class="img-responsive"
+			alt="{event.my_vmfds_events_location}, {event.my_vmfds_events_nav_address}" />
+		</a> <a
+			href="http://maps.google.de/maps?q={event.my_vmfds_events_location}, {event.my_vmfds_events_nav_address}"
+			class="hb-more" target="_blank">Gr&ouml;&szlig;ere Karte</a>
+	</div>
+</aside>
+

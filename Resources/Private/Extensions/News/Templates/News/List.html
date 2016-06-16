@@ -1,0 +1,16 @@
+{namespace n=GeorgRinger\News\ViewHelpers}
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/List.html
+-->
+
+<f:section name="content">
+	<f:if condition="{news}">
+		<f:then>
+			<f:for each="{news}" as="newsItem" iteration="iterator">
+				<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+			</f:for>
+		</f:then>
+	</f:if>
+</f:section>

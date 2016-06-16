@@ -1,0 +1,37 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="de"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:v3="http://typo3.org/ns/VMFDS/V3/ViewHelpers">
+
+	<f:layout name="Page" />
+
+	<f:section name="Configuration">
+		<flux:form id="portal" options="{icon: '{f:uri.resource(path: \'Icons/Page/Portal.png\')}'}">
+			<flux:field.input name="settings.pageClass" default="slide-full" />
+		</flux:form>
+		<flux:grid>
+			<!-- Edit this grid to change the "backend layout" structure -->
+			<flux:grid.row>
+				<flux:grid.column colPos="3" colspan="4" name="hero" />
+			</flux:grid.row>
+			<flux:grid.row>
+				<flux:grid.column colPos="0" colspan="4" name="main" />
+			</flux:grid.row>
+		</flux:grid>
+	</f:section>
+
+	<f:section name="Hero">
+		<!-- Hero-Unit Seite -->
+		<v:content.render column="3" />
+	</f:section>
+
+	<f:section name="Main">
+		<!-- Inhaltselemente der Seite -->
+		<v:content.render column="0" />
+	</f:section>
+
+
+
+
+</div>

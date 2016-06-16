@@ -1,0 +1,53 @@
+{namespace v3=VMFDS\V3\ViewHelpers}
+<div class="col-md-12">
+	<f:widget.paginate objects="{events}" as="events2"
+		configuration="{itemsPerPage: 6, insertAbove: 0, maximumNumberOfLinks: 4}">
+		<div class="events-wrap events-wrap-big">
+			<ul>
+				<f:for each="{events2}" as="event">
+					<li>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="date">
+									{event.startdatum -> f:format.date(format: '%d')}<span>{event.startdatum
+										-> f:format.date(format: '%b')}</span>
+								</div>
+								<h4>
+									{event.name} <span><f:link.action action="show"
+											pageUid="{settings.singlePid}" arguments="{event: event.id}">{event.title}</f:link.action></span>
+								</h4>
+								<div class="time"><f:if condition="{event.startzeit -> f:format.date(format: '%H%M')} > 0">{event.startzeit ->
+									f:format.date(format: '%H:%M')} Uhr - </f:if>{f:if(condition:
+									'{event.my_vmfds_events_location}', then:
+									'{event.my_vmfds_events_location}', else: 'Volksmission
+									Freudenstadt')}</div>
+							</div>
+							<div class="col-md-4">
+								<v3:social.share url="{f:uri.action(action: show, pageUid: settings.singlePid, arguments:'{event: event.id}')}" />
+							</div>
+						</div>
+					</li>
+				</f:for>
+			</ul>
+		</div>
+	</f:widget.paginate>
+</div>
+<aside class="col-md-4">
+	<div class="side-widget">
+		<h5>Veranstaltungsarten</h5>
+		<ul class="categories">
+			<f:for each="{categories}" as="category">
+				<li><f:link.action action="list" arguments="{group: category.url}">{category.name} ({category.count})</f:link.action></li>
+			</f:for>
+		</ul>
+	</div>
+	<div class="space50"></div>
+	<div class="side-widget">
+		<h5>Nach Monaten</h5>
+		<ul class="categories">
+			<f:for each="{months}" as="month">
+				<li><f:link.action action="list" arguments="{month: month.url}">{month.name} {month.year} ({month.count})</f:link.action></li>
+			</f:for>
+		</ul>
+	</div>
+</aside>

@@ -1,0 +1,137 @@
+plugin.tx_v3 {
+	view {
+		templateRootPaths.0 = {$plugin.tx_v3.view.templateRootPaths.default}
+		partialRootPaths.0 = {$plugin.tx_v3.view.partialRootPaths.default}
+		layoutRootPaths.0 = {$plugin.tx_v3.view.layoutRootPaths.default}
+	}
+	#By default the following settings only will have relevance if you have fluidcontent_core extension loaded
+	settings{
+		container {
+			types {
+				default = div
+				Example = div
+			}
+		}
+	}
+}
+
+
+config.language=de
+config.locale_all = de_DE.utf8
+config.sys_language_uid = 0
+
+config.baseUrl = http://v3.vmfds.de/
+config.contentObjectExceptionHandler = 0
+config.disableBodyTag = 1
+
+page {
+    # Pfade
+    absRefPrefix = EXT:v3/Resources/Public/
+    
+
+    # Viewport
+    headerData.10 = TEXT
+    headerData.10.value (
+
+        <!-- Viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    )
+
+    # CSS
+    includeCSS {
+        googleFonts = http://fonts.googleapis.com/css?family=Bitter:400,400italic,700
+        googleFonts.external = 1
+
+        bootstrap = EXT:v3/Resources/Public/Stylesheets/bootstrap.css
+        fontAwesome = EXT:v3/Resources/Public/Stylesheets/font-awesome.min.css
+        theme = EXT:v3/Resources/Public/Stylesheets/theme.css
+        flexslider = EXT:v3/Resources/Public/Stylesheets/flexslider.css
+        owlCarousel = EXT:v3/Resources/Public/Stylesheets/owl.carousel.css
+        owlTheme = EXT:v3/Resources/Public/Stylesheets/owl.theme.css
+        
+
+        #animate = EXT:v3/Resources/Public/Stylesheets/animate.min.css
+        #prettyPhoto = EXT:v3/Resources/Public/Stylesheets/prettyPhoto.css
+        #main = EXT:v3/Resources/Public/Stylesheets/main.css
+        #responsive = EXT:v3/Resources/Public/Stylesheets/responsive.css
+    }
+
+    # Icons
+    shortcutIcon = EXT:v3/Resources/Public/Icons/Shortcut/favicon.ico
+    headerData.51 = TEXT
+    headerData.51.value (
+            <!-- Shortcut icons -->
+            <link rel="apple-touch-icon" sizes="57x57" href="typo3conf/ext/v3/Resources/Public/Icons/Shortcut/apple-touch-icon-57x57.png">
+            <link rel="apple-touch-icon" sizes="60x60" href="typo3conf/ext/v3/Resources/Public/Icons/Shortcut/apple-touch-icon-60x60.png">
+            <link rel="apple-touch-icon" sizes="72x72" href="typo3conf/ext/v3/Resources/Public/Icons/Shortcut/apple-touch-icon-72x72.png">
+            <link rel="apple-touch-icon" sizes="76x76" href="typo3conf/ext/v3/Resources/Public/Icons/Shortcut/apple-touch-icon-76x76.png">
+            <link rel="apple-touch-icon" sizes="114x114" href="typo3conf/ext/v3/Resources/Public/Icons/Shortcut/apple-touch-icon-114x114.png">
+            <link rel="apple-touch-icon" sizes="120x120" href="typo3conf/ext/v3/Resources/Public/Icons/Shortcut/apple-touch-icon-120x120.png">
+            <link rel="apple-touch-icon" sizes="144x144" href="typo3conf/ext/v3/Resources/Public/Icons/Shortcut/apple-touch-icon-144x144.png">
+            <link rel="apple-touch-icon" sizes="152x152" href="typo3conf/ext/v3/Resources/Public/Icons/Shortcut/apple-touch-icon-152x152.png">
+            <link rel="apple-touch-icon" sizes="180x180" href="typo3conf/ext/v3/Resources/Public/Icons/Shortcut/apple-touch-icon-180x180.png">
+            <link rel="icon" type="image/png" href="typo3conf/ext/v3/Resources/Public/Icons/Shortcut/favicon-32x32.png" sizes="32x32">
+            <link rel="icon" type="image/png" href="typo3conf/ext/v3/Resources/Public/Icons/Shortcut/android-chrome-192x192.png" sizes="192x192">
+            <link rel="icon" type="image/png" href="typo3conf/ext/v3/Resources/Public/Icons/Shortcut/favicon-96x96.png" sizes="96x96">
+            <link rel="icon" type="image/png" href="typo3conf/ext/v3/Resources/Public/Icons/Shortcut/favicon-16x16.png" sizes="16x16">
+            <link rel="manifest" href="typo3conf/ext/v3/Resources/Public/Icons/Shortcut/manifest.json">
+            <link rel="shortcut icon" href="typo3conf/ext/v3/Resources/Public/Icons/Shortcut/favicon.ico">
+            <meta name="msapplication-TileColor" content="#2b5797">
+            <meta name="msapplication-TileImage" content="typo3conf/ext/v3/Resources/Public/Icons/Shortcut/mstile-144x144.png">
+            <meta name="msapplication-config" content="typo3conf/ext/v3/Resources/Public/Icons/Shortcut/browserconfig.xml">
+            <meta name="theme-color" content="#ffffff">
+
+            <!--[if lt IE 9]>
+                <script src="/typo3conf/ext/v3/Resources/Public/Javascript/libs/respond.min.js"></script>
+            <![endif]-->
+    )
+
+
+    # JS im Footer
+    includeJSFooter {
+        jquery = EXT:v3/Resources/Public/Javascript/jquery.js
+        bootstrap = EXT:v3/Resources/Public/Javascript/bootstrap.min.js
+        mobileMenu = EXT:v3/Resources/Public/Javascript/jquery.mobilemenu.js
+        owlCarousel = EXT:v3/Resources/Public/Javascript/owl-carousel.js
+        flexSlider = EXT:v3/Resources/Public/Javascript/jquery.flexslider.js
+        easing = EXT:v3/Resources/Public/Javascript/jquery.easing.js
+        ui = EXT:v3/Resources/Public/Javascript/jquery-ui.js
+        isotope = EXT:v3/Resources/Public/Javascript/jquery.isotope.min.js
+        accordion = EXT:v3/Resources/Public/Javascript/jquery.accordion.js
+        animateNumber = EXT:v3/Resources/Public/Javascript/jquery.animateNumber.js
+        appear = EXT:v3/Resources/Public/Javascript/jquery.appear.js      
+        theme = EXT:v3/Resources/Public/Javascript/theme.js
+        stellar = EXT:v3/Resources/Public/Javascript/jquery.stellar.js
+    }
+}
+
+
+lib.slider = FILES
+lib.slider {
+    references {
+        data = levelmedia:-1, slide
+    }
+    renderObj = COA
+    renderObj {
+        10 = IMAGE
+        10 {
+            file.import.data = file:current:publicUrl
+            file.width = 1920
+            titleText.data = file:current:title
+            wrap = <div class="item">|</div>
+        }
+    }
+}
+
+# Pagination-ViewHelper:
+plugin.tx_extbase.view.widget.TYPO3\CMS\Fluid\ViewHelpers\Widget\PaginateViewHelper.templateRootPath =  EXT:v3/Resources/Private/Extensions/Pagination/
+plugin.tx_vmfdsevents.view.widget.TYPO3\CMS\Fluid\ViewHelpers\Widget\PaginateViewHelper.templateRootPath =  EXT:v3/Resources/Private/Extensions/Pagination/
+
+# Form templates
+plugin.tx_form {
+	view.templateRootPaths.10 >
+	view.partialRootPaths.10 >
+	view.partialRootPaths.20 = EXT:v3/Resources/Private/Extensions/Form/Partials/
+	view.templateRootPaths.20 = EXT:v3/Resources/Private/Extensions/Form/Templates/
+}

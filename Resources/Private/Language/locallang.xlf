@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" product-name="v3" date="2016-01-28T12:28:58+01:00">
+        <header/>
+        <body>
+			<trans-unit id="flux.standard">
+				<source>Gemeinde (Standard)</source>
+			</trans-unit>
+			<trans-unit id="flux.standard.description">
+				<source>Standardseite, Volksmission Freudenstadt</source>
+			</trans-unit>
+			<trans-unit id="flux.standard.fields.settings.pageClass">
+				<source>CSS-Klasse für den Bodytag</source>
+			</trans-unit>
+			<trans-unit id="flux.standard.fields.settings.render.breadcrumb">
+				<source>Breadcrumb-Navigation anzeigen</source>
+			</trans-unit>
+			<trans-unit id="flux.portal">
+				<source>Gemeinde (Portalseite)</source>
+			</trans-unit>
+			<trans-unit id="flux.portal.description">
+				<source>Portalseite, Volksmission Freudenstadt</source>
+			</trans-unit>
+			<trans-unit id="flux.catheader">
+				<source>Gemeinde (2. Ebene)</source>
+			</trans-unit>
+			<trans-unit id="flux.catheader.description">
+				<source>Einstiegsseite der 2. Ebene, Volksmission Freudenstadt</source>
+			</trans-unit>
+            <trans-unit id="flux.standard.fields.pageClass">
+                <source>CSS-Klasse des Body-Tags</source>
+            </trans-unit>
+            <trans-unit id="flux.homeSlider">
+                <source>Großer Slider</source>
+            </trans-unit>
+            <trans-unit id="flux.homeSlider.description">
+                <source>Wechselnde Bilder für eine Portalseite</source>
+            </trans-unit>
+            <trans-unit id="flux.homeSlider.columns.sliderContent">
+                <source>Inhaltselemente für den Slider</source>
+            </trans-unit>
+            <trans-unit id="flux.homeSliderElement">
+                <source>Einfaches Sliderbild</source>                           
+            </trans-unit>
+            <trans-unit id="flux.homeSliderElement.description">
+                <source>Bild mit optionalem Titeltext für den Slider</source>                           
+            </trans-unit>
+            <trans-unit id="flux.homeSliderElement.fields.image">
+                <source>Bild</source>                           
+            </trans-unit>
+            <trans-unit id="flux.homeSliderElement.fields.teasertext">
+                <source>Text zum Bild</source>                           
+            </trans-unit>
+            <trans-unit id="flux.actionButton">
+                <source>Button</source>
+            </trans-unit>
+            <trans-unit id="flux.actionButton.description">
+                <source>Link in Buttonform</source>
+            </trans-unit>
+            <trans-unit id="flux.actionButton.fields.title">
+                <source>Titel</source>
+            </trans-unit>
+            <trans-unit id="flux.actionButton.fields.link">
+                <source>Link zur Seite</source>
+            </trans-unit>
+            <trans-unit id="flux.actionButton.fields.class">
+                <source>CSS Klasse</source>
+            </trans-unit>
+            <trans-unit id="flux.standard.columns.megamenu1">
+                <source>Megamenü (breite, linke Spalte)</source>
+            </trans-unit>
+            <trans-unit id="flux.standard.columns.megamenu2">
+                <source>Megamenü (breite, linke Spalte)</source>
+            </trans-unit>
+            <trans-unit id="flux.standard.columns.hero">
+                <source>Inhalt im Kopfbereich der Seite</source>
+            </trans-unit>
+            <trans-unit id="flux.standard.columns.main">
+                <source>Seiteninhalt</source>
+            </trans-unit>
+            <trans-unit id="flux.archiveLink">
+                <source>Archivlink</source>
+            </trans-unit>
+            <trans-unit id="flux.archiveLink.description">
+                <source>Link zum Archiv, in Pfeilform (Seitenbreite)</source>
+            </trans-unit>
+            <trans-unit id="flux.archiveLink.fields.title">
+                <source>Titel</source>
+            </trans-unit>
+            <trans-unit id="flux.archiveLink.fields.link">
+                <source>Link zur Seite</source>
+            </trans-unit>
+            <trans-unit id="flux.row" xml:space="preserve">
+                <source>Mehrspaltiges Layout</source>
+            </trans-unit>
+            <trans-unit id="flux.row.description" xml:space="preserve">
+                <source>Fügt ein variables, mehrspaltiges Layoutelement hinzu</source>
+            </trans-unit>
+            <trans-unit id="flux.row.columns.column">
+                <source>Spalte</source>
+            </trans-unit>
+            <trans-unit id="flux.row.fields.wrapperClass">
+                <source>Optionaler CSS-Wrapper</source>
+            </trans-unit>
+            <trans-unit id="flux.row.fields.addContainer">
+                <source>Containerklasse hinzufügen</source>
+            </trans-unit>
+            <trans-unit id="flux.row.fields.class">
+                <source>Spaltentyp</source>
+            </trans-unit>
+            <trans-unit id="flux.row.fields.addWell">
+                <source>"Well" hinzufügen</source>
+            </trans-unit>
+            <trans-unit id="flux.row.fields.additionalClass">
+                <source>Zusätzliche CSS-Klassen</source>
+            </trans-unit>
+            <trans-unit id="flux.homeContainer">
+                <source>Leerer Container</source>
+            </trans-unit>
+            <trans-unit id="flux.homeContainer.description">
+                <source>Der Container wird für weitere CSS-Klassen benötigt</source>
+            </trans-unit>
+            <trans-unit id="flux.homeContainer.columns.containerContent">
+                <source>Inhaltselemente</source>
+            </trans-unit>
+            <trans-unit id="flux.homeContainer.fields.wrapperClass">
+                <source>Zusätzliche CSS-Klasse für den Wrapper</source>
+            </trans-unit>
+            <trans-unit id="flux.homeContainer.fields.containerClass">
+                <source>Zusätzliche CSS-Klasse für den Container</source>
+            </trans-unit>
+            <trans-unit id="flux.homeContainerWithSidebar">
+                <source>Leerer Container mit Seitenleiste</source>
+            </trans-unit>
+            <trans-unit id="flux.homeContainerWithSidebar.description">
+                <source>Der Container wird für weitere CSS-Klassen benötigt</source>
+            </trans-unit>
+            <trans-unit id="flux.homeContainerWithSidebar.columns.containerContent">
+                <source>Inhaltselemente</source>
+            </trans-unit>
+            <trans-unit id="flux.homeContainerWithSidebar.columns.containerSidebar">
+                <source>Seitenleiste</source>
+            </trans-unit>
+            <trans-unit id="flux.homeContainerWithSidebar.fields.wrapperClass">
+                <source>Zusätzliche CSS-Klasse für den Wrapper</source>
+            </trans-unit>
+            <trans-unit id="flux.homeContainerWithSidebar.fields.containerClass">
+                <source>Zusätzliche CSS-Klasse für den Container</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

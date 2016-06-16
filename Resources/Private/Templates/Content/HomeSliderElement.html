@@ -1,0 +1,29 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+    <f:layout name="Content" />
+
+    <f:section name="Configuration">
+        <flux:form id="homeSliderElement" options="{group: 'Portal'}">
+            <flux:field.file name="image" allowed="jpg" uploadFolder="uploads/slider/" size="1" />
+            <flux:field.text name="teasertext" rows="5" cols="30" enableRichText="1"/>
+        </flux:form>
+    </f:section>
+
+    <f:section name="Preview">
+        <!-- If you wish, place custom backend preview content here -->
+        <v:media.image src="uploads/slider/{image}" alt="" width="100" />
+        <f:format.crop maxCharacters="50">{teasertext}</f:format.crop>
+    </f:section>
+
+    <f:section name="Main">
+        <div class="item">
+            <v:media.image src="uploads/slider/{image}" alt="" class="img-responsive" />
+            <div class="nivo-caption">
+                <f:format.html>{teasertext}</f:format.html>
+            </div>
+        </div>
+    </f:section>
+</div>

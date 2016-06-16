@@ -1,0 +1,93 @@
+plugin.tx_vmfds.view {
+	templateRootPaths.0 = {$plugin.tx_vmfds.view.templateRootPaths.default}
+	partialRootPaths.0 = {$plugin.tx_vmfds.view.partialRootPaths.default}
+	layoutRootPaths.0 = {$plugin.tx_vmfds.view.layoutRootPaths.default}
+}
+
+page {
+    # Pfade
+    absRefPrefix = EXT:funkyfilioque/Resources/Public/
+
+    # Viewport
+    headerData.10 = TEXT
+    headerData.10.value (
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    )
+
+    # CSS
+    includeCSS {
+        bootstrap = EXT:funkyfilioque/Resources/Public/css/bootstrap.min.css
+        fontAwesome = EXT:funkyfilioque/Resources/Public/css/font-awesome.min.css
+        animate = EXT:funkyfilioque/Resources/Public/css/animate.min.css
+        prettyPhoto = EXT:funkyfilioque/Resources/Public/css/prettyPhoto.css
+        main = EXT:funkyfilioque/Resources/Public/css/main.css
+        responsive = EXT:funkyfilioque/Resources/Public/css/responsive.css
+    }
+
+    # IE-Fix für IE <9
+    headerData.50 = TEXT
+    headerData.50.value (
+
+        <!--[if lt IE 9]>
+        <script src="typo3conf/ext/funkyfilioque/Resources/Public/js/html5shiv.js"></script>
+        <script src="typo3conf/ext/funkyfilioque/Resources/Public/js/respond.min.js"></script>
+        <![endif]-->  
+     
+    )
+
+    # Icons
+    shortcutIcon = EXT:funkyfilioque/Resources/Public/Icons/Shortcut/favicon.ico
+    headerData.1 = TEXT
+    headerData.1.value (
+            <link rel="apple-touch-icon" sizes="57x57" href="typo3conf/ext/funkyfilioque/Resources/Public/Icons/Shortcut/apple-touch-icon-57x57.png">
+            <link rel="apple-touch-icon" sizes="60x60" href="typo3conf/ext/funkyfilioque/Resources/Public/Icons/Shortcut/apple-touch-icon-60x60.png">
+            <link rel="apple-touch-icon" sizes="72x72" href="typo3conf/ext/funkyfilioque/Resources/Public/Icons/Shortcut/apple-touch-icon-72x72.png">
+            <link rel="apple-touch-icon" sizes="76x76" href="typo3conf/ext/funkyfilioque/Resources/Public/Icons/Shortcut/apple-touch-icon-76x76.png">
+            <link rel="apple-touch-icon" sizes="114x114" href="typo3conf/ext/funkyfilioque/Resources/Public/Icons/Shortcut/apple-touch-icon-114x114.png">
+            <link rel="apple-touch-icon" sizes="120x120" href="typo3conf/ext/funkyfilioque/Resources/Public/Icons/Shortcut/apple-touch-icon-120x120.png">
+            <link rel="apple-touch-icon" sizes="144x144" href="typo3conf/ext/funkyfilioque/Resources/Public/Icons/Shortcut/apple-touch-icon-144x144.png">
+            <link rel="apple-touch-icon" sizes="152x152" href="typo3conf/ext/funkyfilioque/Resources/Public/Icons/Shortcut/apple-touch-icon-152x152.png">
+            <link rel="apple-touch-icon" sizes="180x180" href="typo3conf/ext/funkyfilioque/Resources/Public/Icons/Shortcut/apple-touch-icon-180x180.png">
+            <link rel="icon" type="image/png" href="typo3conf/ext/funkyfilioque/Resources/Public/Icons/Shortcut/favicon-32x32.png" sizes="32x32">
+            <link rel="icon" type="image/png" href="typo3conf/ext/funkyfilioque/Resources/Public/Icons/Shortcut/android-chrome-192x192.png" sizes="192x192">
+            <link rel="icon" type="image/png" href="typo3conf/ext/funkyfilioque/Resources/Public/Icons/Shortcut/favicon-96x96.png" sizes="96x96">
+            <link rel="icon" type="image/png" href="typo3conf/ext/funkyfilioque/Resources/Public/Icons/Shortcut/favicon-16x16.png" sizes="16x16">
+            <link rel="manifest" href="typo3conf/ext/funkyfilioque/Resources/Public/Icons/Shortcut/manifest.json">
+            <link rel="shortcut icon" href="typo3conf/ext/funkyfilioque/Resources/Public/Icons/Shortcut/favicon.ico">
+            <meta name="msapplication-TileColor" content="#2b5797">
+            <meta name="msapplication-TileImage" content="typo3conf/ext/funkyfilioque/Resources/Public/Icons/Shortcut/mstile-144x144.png">
+            <meta name="msapplication-config" content="typo3conf/ext/funkyfilioque/Resources/Public/Icons/Shortcut/browserconfig.xml">
+            <meta name="theme-color" content="#ffffff">
+    )
+
+    # Body tag
+    bodyTag >
+    bodyTagCObject = TEXT
+    bodyTagCObject.dataWrap = <body class="homepage">
+
+    # JS im Footer
+    includeJSFooter {
+        jquery = EXT:funkyfilioque/Resources/Public/js/jquery.js
+        sliderFix = EXT:funkyfilioque/Resources/Public/js/slider-fix.js
+        bootstrap = EXT:funkyfilioque/Resources/Public/js/bootstrap.min.js
+        prettyPhoto = EXT:funkyfilioque/Resources/Public/js/jquery.prettyPhoto.js
+        jqueryIsotope = EXT:funkyfilioque/Resources/Public/js/jquery.isotope.min.js
+        main = EXT:funkyfilioque/Resources/Public/js/main.js
+        wow = EXT:funkyfilioque/Resources/Public/js/wow.min.js
+    }
+}
+
+# Debug
+config.contentObjectExceptionHandler = 0
+
+# Libs einbinden
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:funkyfilioque/Configuration/TypoScript/lib/contacts.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:funkyfilioque/Configuration/TypoScript/lib/copyrights.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:funkyfilioque/Configuration/TypoScript/lib/social.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:funkyfilioque/Configuration/TypoScript/lib/portal/sermons.ts">
+
+# Slider
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:funkyfilioque/Configuration/TypoScript/lib/slider/events.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:funkyfilioque/Configuration/TypoScript/lib/slider/latest_sermon.ts">
+
+

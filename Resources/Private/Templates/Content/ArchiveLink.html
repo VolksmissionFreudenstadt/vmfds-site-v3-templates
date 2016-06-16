@@ -1,0 +1,29 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+    <f:layout name="Content" />
+
+    <f:section name="Configuration">
+        <flux:form id="archiveLink" options="{group: 'FCE'}">
+            <!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:flexform tag -->
+            <flux:field.input name="title" required="true" />
+            <flux:field.input name="link">
+                <flux:wizard.link activeTab="page"/>
+            </flux:field.input>
+        </flux:form>
+    </f:section>
+
+    <f:section name="Preview">
+        Archivlink: {title} ({link})
+    </f:section>
+
+    <f:section name="Main">
+	<div class="container">
+		<div class="col-md-16">
+                    <f:link.page pageUid="{link}" class="archive-link" title="{title}">{title}</f:link.page>
+		</div>
+	</div>
+    </f:section>
+</div>

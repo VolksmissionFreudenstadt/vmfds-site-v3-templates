@@ -1,0 +1,94 @@
+<f:layout name="Page" />
+
+<body id="{settings.pageClass}">
+	<div class="body">
+		<div class="slider-wrap">
+
+			<!-- Header -->
+			<header class="container">
+				<div class="col-md-6">
+					<!-- nav-left -->
+					<div class="nav-left">
+						<f:render partial="NavUnit"
+							arguments="{pages: '5,8,6,', ulClass: ''}" />
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="logo">
+						<a href="/"><img
+							src="typo3conf/ext/v3/Resources/Public/Images/CI/volksmission.png"
+							class="img-responsive" alt="" /></a>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- nav-left -->
+					<div class="nav-right">
+						<f:render partial="NavUnit" arguments="{pages: '9,7,10'}" />
+					</div>
+				</div>
+			</header>
+			<!-- Header -->
+
+			<div class="nav-left nav-mobile">
+				<f:render partial="NavUnit"
+					arguments="{pages: '5,8,6,9,7,10', ulClass: 'nav-mobile-ul'}" />
+			</div>
+
+
+			<f:render section="Hero" />
+
+
+		</div>
+
+		<f:render section="Main" />
+
+
+
+
+
+		<!-- Footer -->
+		<footer>
+			<div class="footer1">
+				<div class="container">
+					<div class="col-md-8">
+						<img
+							src="typo3conf/ext/v3/Resources/Public/Images/CI/volksmission.png"
+							class="img-responsive" alt="" />
+					</div>
+					<div class="col-md-8">
+						<h6>Online dabei:</h6>
+						<v3:social.share url="{f:uri.page()}" />
+					</div>
+				</div>
+			</div>
+			<div class="footer2">
+				<div class="container">
+					<div class="col-md-4 footer-widget">
+						<h5>Komm uns besuchen:</h5>
+						<p>
+							Wallstr. 3-5 <br> 72250 Freudenstadt
+						</p>
+						<p>
+							Telefon: (0 74 41) 71 73<br> Fax: (0 74 41) 9 12 58 04
+						</p>
+					</div>
+					<div class="col-md-3 footer-widget fw2">
+						<h5>Gottesdienst</h5>
+						<p>
+							Sonntag<br> 10:00 Uhr (mit Kindergottesdienst)
+						</p>
+					</div>
+					<div class="col-md-9 footer-widget last">
+						<div class="footer-quote">Die Volksmission will Menschen
+							helfen, den Weg zurück zu Gott zu finden und gemeinsam mit ihm
+							weiter zu gehen.</div>
+						<p class="copy">
+							&copy; Volksmission Freudenstadt
+							<f:format.date format="Y">now</f:format.date>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- Footer -->
+	</div>

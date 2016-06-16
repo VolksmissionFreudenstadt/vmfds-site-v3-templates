@@ -1,0 +1,6 @@
+<f:if condition="{sermon}"><f:if condition="{sermon.image}">
+<div class="item">
+	<f:image class="img-responsive" src="/predigten/Titelbilder/{sermon.image}" alt="" width="1920" height="827" />
+	<div class="nivo-caption"><h2>{sermon.title}</h2><p>Die Predigt vom {sermon.preached -> f:format.date(format: '%d. %B')} jetzt anh&ouml;ren</p></div>
+</div>
+</f:if></f:if>

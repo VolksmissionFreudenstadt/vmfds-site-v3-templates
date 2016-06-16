@@ -1,0 +1,40 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+	<f:layout name="Content" />
+
+	<f:section name="Configuration">
+		<flux:form id="homeContainerWithSidebar" options="{group: 'Portal'}">
+			<flux:field.input name="wrapperClass" />
+			<flux:field.input name="containerClass" />
+			<flux:grid>
+				<flux:grid.row>
+					<flux:grid.column name="containerContent" colspan="3 " />
+					<flux:grid.column name="containerSidebar" />
+				</flux:grid.row>
+			</flux:grid>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+	</f:section>
+
+	<f:section name="Main">
+		<f:if condition="{wrapperClass}">
+			<div class="{wrapperClass}">
+		</f:if>
+		<div class="container {containerClass}">
+			<div class="col-md-12">
+				<flux:content.render area="containerContent" />
+			</div>
+			<aside class="col-md-4">
+				<flux:content.render area="containerSidebar" />
+			</aside>
+		</div>
+		<f:if condition="{wrapperClass}">
+</div>
+</f:if>
+</f:section>
+</div>

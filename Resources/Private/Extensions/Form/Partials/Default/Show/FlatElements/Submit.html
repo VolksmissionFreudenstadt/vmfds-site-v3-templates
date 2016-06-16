@@ -1,0 +1,40 @@
+<f:if condition="{model.showElement}">
+	<div class="row">
+		<div class="col-md-16">
+			<f:if condition="{model.mandatoryValidationMessages}">
+				<label for="{model.additionalArguments.id}"> <em><f:for
+							each="{model.mandatoryValidationMessages}"
+							as="mandatoryValidationMessage" iteration="iterator">{mandatoryValidationMessage}<f:if
+								condition="{iterator.isLast}">
+								<f:else> - </f:else>
+							</f:if>
+						</f:for></em>
+				</label>
+			</f:if>
+			<f:if condition="{model.validationErrorMessages}">
+				<label for="{model.additionalArguments.id}"> <strong><f:for
+							each="{model.validationErrorMessages}"
+							as="errorValidationMessage" iteration="iterator">{errorValidationMessage}<f:if
+								condition="{iterator.isLast}">
+								<f:else> - </f:else>
+							</f:if>
+						</f:for></strong>
+				</label>
+			</f:if>
+
+
+			<f:form.submit class="c-btn pull-right"
+				additionalAttributes="{model.htmlAttributes}"
+				dir="{model.additionalArguments.dir}"
+				id="{model.additionalArguments.id}"
+				lang="{model.additionalArguments.lang}"
+				style="{model.additionalArguments.style}"
+				title="{model.additionalArguments.title}"
+				accesskey="{model.additionalArguments.accesskey}"
+				tabindex="{model.additionalArguments.tabindex}"
+				onclick="{model.additionalArguments.onclick}"
+				name="{model.additionalArguments.prefix}[{model.additionalArguments.name}]"
+				value="{model.additionalArguments.value}" />
+		</div>
+	</div>
+</f:if>
